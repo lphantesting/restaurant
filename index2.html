@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copilot Chatbot Embed Demo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+      background-color: #f9f9f9;
+    }
+    .chat-container {
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+    }
+    .chat-btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .chat-modal {
+      display: none;
+      position: fixed;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      z-index: 1000;
+    }
+    .chat-modal iframe {
+      border: none;
+      border-radius: 8px;
+    }
+    .chat-close {
+      margin-top: 1rem;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <h1>Copilot Chatbot Demo</h1>
+    <button class="chat-btn" onclick="openChatbot()">Open Chatbot</button>
+
+    <div class="chat-modal" id="chatModal">
+      <iframe
+        src="https://copilotstudio.microsoft.com/environments/Default-88227c99-d157-4dbe-8e33-d8b3fcc29577/bots/cr69f_tia/webchat?__version__=2" 
+        width="400"
+        height="600"
+        title="Copilot Chatbot"
+        allow="microphone; camera"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
+  <script>
+    function openChatbot() {
+      document.getElementById("chatModal").style.display = "block";
+    }
+
+  </script>
+</body>
+</html>
